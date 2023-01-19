@@ -1,0 +1,96 @@
+@startuml
+card zac[
+заказчик
+]
+card pk[
+компьютерный салон
+]
+card form[
+Экранная форма для
+ввода, вывода и
+редактирования
+информации
+]
+card poisk[
+Модуль поиска
+]
+card zacaz[
+Модуль заказа
+]
+card post[
+Поставщик
+]
+card doc[
+Документы
+]
+card proizvod[
+Производитель
+комплектующего
+]
+card model[
+Модель комплектующего
+]
+card tip[
+Тип комплектующего
+]
+card redac[
+Модуль редактирования
+]
+card data[
+Дата поступления
+оборудования
+]
+card postav[
+Поставщик
+оборудования
+]
+card obor[
+Оборудование
+]
+card dog[
+Договор
+]
+card oper[
+Модуль проведения
+опрераций
+]
+card remont[
+Ремонт
+]
+card zamen[
+Замена или
+улучшение
+]
+database bd[
+БД
+]
+zac --> pk
+pk --> form
+form --> poisk
+poisk --> zacaz
+poisk --> bd
+poisk --> post
+poisk --> doc
+zacaz --> post
+post --> proizvod
+post --> model
+post --> tip
+proizvod --> model
+tip --> model
+model --> data
+model --> bd
+data --> obor
+obor --> postav
+obor -->dog
+postav --> dog
+doc --> redac
+redac --> dog
+dog --> bd
+dog --> oper
+oper -->remont
+oper -->zamen
+remont --> dog
+zamen -->dog
+bd --> obor
+obor --> bd
+@enduml
