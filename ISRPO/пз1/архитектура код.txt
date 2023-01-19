@@ -1,0 +1,15 @@
+@startuml
+@startuml
+node "База данных" as bd{
+ component "База данных" as node1
+}
+node "Компьютерный склад" as sklad{
+ component "Оболочка базы данных" as node2
+}
+node "Компьютер (салон)" as salon{
+ component "Оболочка базы данных" as node3
+}
+bd -- sklad : ""1\n1..*""
+bd - salon : ""1     1""
+salon -- sklad : ""1..*   1""
+@enduml
